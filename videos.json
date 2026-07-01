@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "animador": "kekeanimations",
+    "personajes": ["columbina"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/u8p171a19m8g",
+    "imagen": "" // ← Deja vacío para auto-generar, o pon URL manual
+  },
+  {
+    "id": 2,
+    "animador": "kekeanimations",
+    "personajes": ["mona"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/pmhfylf256aj",
+    "imagen": ""
+  },
+  {
+    "id": 3,
+    "animador": "kekeanimations",
+    "personajes": ["mona"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/ldwyt8lg33cg",
+    "imagen": ""
+  },
+  {
+    "id": 4,
+    "animador": "kekeanimations",
+    "personajes": ["nefer"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/jpbhu2i5cg66",
+    "imagen": ""
+  },
+  {
+    "id": 5,
+    "animador": "kekeanimations",
+    "personajes": ["nilou"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/wxtmz4495g5u",
+    "imagen": ""
+  },
+  {
+    "id": 6,
+    "animador": "kekeanimations",
+    "personajes": ["furina"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/8nvuc4vmyx7i",
+    "imagen": ""
+  },
+  {
+    "id": 7,
+    "animador": "kekeanimations",
+    "personajes": ["mona"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/h8gzso4icp9n",
+    "imagen": ""
+  },
+  {
+    "id": 8,
+    "animador": "kekeanimations",
+    "personajes": ["alice", "nicole reeyn"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/q4nev9iw1oq4",
+    "imagen": ""
+  },
+  {
+    "id": 9,
+    "animador": "kekeanimations",
+    "personajes": ["chevreuse"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/zuhkvtlbzhm3",
+    "imagen": ""
+  },
+  {
+    "id": 10,
+    "animador": "kekeanimations",
+    "personajes": ["lynette"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/cxssv94dx6qc",
+    "imagen": ""
+  },
+  {
+    "id": 11,
+    "animador": "kekeanimations",
+    "personajes": ["linnea"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/wvz4jttmmcux",
+    "imagen": ""
+  },
+  {
+    "id": 12,
+    "animador": "kekeanimations",
+    "personajes": ["chasca"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/axnksmhaj0tn",
+    "imagen": ""
+  },
+  {
+    "id": 13,
+    "animador": "kekeanimations",
+    "personajes": ["fischl"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/runj3m8ikimf",
+    "imagen": ""
+  },
+  {
+    "id": 14,
+    "animador": "kekeanimations",
+    "personajes": ["citlali"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/k11r4cq254xn",
+    "imagen": ""
+  },
+  {
+    "id": 15,
+    "animador": "kekeanimations",
+    "personajes": ["chiori"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/wt4odl4lcf90",
+    "imagen": ""
+  }
+]
