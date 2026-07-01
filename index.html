@@ -2,422 +2,457 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Catálogo de Videos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Catalog</title>
     <style>
-        /* ===== RESET Y BASE ===== */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: #0a0a0f;
-            color: #e0e0e0;
-            padding: 16px 12px 80px 12px;
-            min-height: 100vh;
+            background-color: #0d0e12;
+            color: #e2e8f0;
+            padding-bottom: 60px;
         }
 
-        /* ===== HEADER ===== */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .header h1 {
-            font-size: 20px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .badge-count {
-            font-size: 13px;
-            color: #888;
-            background: #1a1a2e;
-            padding: 4px 12px;
-            border-radius: 20px;
-            border: 1px solid #2a2a4e;
+        header {
+            background-color: #161920;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border-bottom: 1px solid #232834;
         }
 
-        /* ===== BUSCADOR ===== */
-        .search-box {
+        .search-container {
+            width: 100%;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .search-bar {
             width: 100%;
             padding: 12px 16px;
-            border-radius: 12px;
-            border: 1px solid #2a2a4e;
-            background: #12121f;
-            color: #e0e0e0;
+            background-color: #232834;
+            border: 1px solid #31384a;
+            border-radius: 8px;
+            color: #fff;
             font-size: 15px;
-            margin-bottom: 14px;
             outline: none;
-            transition: border 0.2s;
-        }
-        .search-box:focus {
-            border-color: #f5576c;
-        }
-        .search-box::placeholder {
-            color: #555;
+            transition: border-color 0.2s;
         }
 
-        /* ===== NAV ETIQUETAS ===== */
+        .search-bar:focus {
+            border-color: #6366f1;
+        }
+
+        .nav-toggle-btn {
+            width: 100%;
+            background-color: #1e222b;
+            color: #a5b4fc;
+            border: 1px solid #2d3345;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Panel de Etiquetas Desplegable */
         .tags-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 18px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #1a1a2e;
-            max-height: 120px;
+            display: none;
+            background-color: #161920;
+            border-bottom: 1px solid #232834;
+            padding: 15px;
+            max-height: 350px;
             overflow-y: auto;
         }
-        .tag-btn {
-            background: #1a1a2e;
-            border: 1px solid #2a2a4e;
-            color: #aaa;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }
-        .tag-btn:hover {
-            background: #2a2a4e;
-            color: #fff;
-        }
-        .tag-btn.active {
-            background: #f5576c;
-            border-color: #f5576c;
-            color: #fff;
-        }
-        .tag-btn.tag-animador { border-color: #f093fb; }
-        .tag-btn.tag-personaje { border-color: #4facfe; }
-        .tag-btn.tag-universo { border-color: #43e97b; }
 
-        /* ===== LISTA DE VIDEOS ===== */
-        .video-list {
+        .tags-nav.active {
+            display: block;
+        }
+
+        .tag-section-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #64748b;
+            margin: 12px 0 6px 0;
+        }
+
+        .tags-cloud {
             display: flex;
-            flex-direction: column;
-            gap: 16px;
+            flex-wrap: wrap;
+            gap: 6px;
         }
 
-        /* ===== TARJETA ===== */
-        .video-card {
-            background: #12121f;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #1a1a2e;
-            transition: transform 0.15s, border-color 0.2s;
+        .tag {
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background-color: #222530;
+            color: #cbd5e1;
+            cursor: pointer;
+            border: 1px solid transparent;
         }
+
+        .tag.active {
+            background-color: #4f46e5;
+            color: #fff;
+            border-color: #818cf8;
+        }
+
+        /* Contenedor de la Lista Principal */
+        .catalog-container {
+            padding: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .video-card {
+            background-color: #161920;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 1px solid #232834;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
         .video-card:active {
             transform: scale(0.98);
         }
 
-        .video-card img {
+        /* Imagen Retrato arriba */
+        .card-image-box {
             width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
-            background: #1a1a2e;
+            height: 240px;
+            background: linear-gradient(135deg, #1e1b4b, #311042);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .video-info {
-            padding: 12px 14px 14px 14px;
+        .card-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        /* Fallback placeholder estético */
+        .avatar-placeholder {
+            font-size: 64px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.15);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            user-select: none;
+        }
+
+        .card-content {
+            padding: 15px;
         }
 
         .video-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
-            margin-bottom: 6px;
-            line-height: 1.3;
-        }
-        .video-title .animador {
-            color: #f093fb;
-        }
-        .video-title .personajes {
-            color: #4facfe;
-        }
-        .video-title .universo {
-            color: #43e97b;
-            font-size: 14px;
-            font-weight: 400;
+            line-height: 1.4;
+            color: #f1f5f9;
+            margin-bottom: 12px;
         }
 
-        .video-tags {
+        .card-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            margin: 8px 0 10px 0;
-        }
-        .video-tags span {
-            font-size: 10px;
-            background: #1a1a2e;
-            padding: 2px 10px;
-            border-radius: 12px;
-            border: 1px solid #2a2a4e;
-            color: #888;
-        }
-        .video-tags .tag-animador { border-color: #f093fb44; color: #f093fb; }
-        .video-tags .tag-personaje { border-color: #4facfe44; color: #4facfe; }
-        .video-tags .tag-universo { border-color: #43e97b44; color: #43e97b; }
-
-        .btn-ver {
-            display: inline-block;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: #fff;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: opacity 0.2s, transform 0.1s;
-            width: 100%;
-            text-align: center;
-        }
-        .btn-ver:active {
-            transform: scale(0.97);
-            opacity: 0.8;
+            gap: 5px;
+            margin-bottom: 15px;
         }
 
-        /* ===== MENSAJE SIN RESULTADOS ===== */
-        .no-results {
-            text-align: center;
-            color: #555;
-            padding: 40px 0;
-            font-size: 15px;
-        }
-
-        /* ===== SCROLLBAR ===== */
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0a0f;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #2a2a4e;
+        .badge {
+            font-size: 11px;
+            padding: 2px 8px;
             border-radius: 4px;
+            font-weight: 500;
         }
 
-        /* ===== RESPONSIVE PEQUEÑO ===== */
-        @media (max-width: 400px) {
-            .video-card img {
-                height: 150px;
-            }
-            .video-title {
-                font-size: 14px;
-            }
+        .badge-animator { background-color: #1e293b; color: #94a3b8; }
+        .badge-character { background-color: #312e81; color: #a5b4fc; }
+        .badge-universe { background-color: #3b1742; color: #f472b6; }
+
+        .action-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #4f46e5;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .action-button:hover {
+            background-color: #4338ca;
+        }
+
+        /* Contador de resultados */
+        .results-counter {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 15px;
+            text-align: right;
+        }
+
+        /* Intermediario de Carga Seguro (Modal) */
+        .redirect-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(13, 14, 18, 0.96);
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .redirect-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #232834;
+            border-top: 4px solid #6366f1;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .redirect-text {
+            font-size: 16px;
+            color: #fff;
+            font-weight: 500;
+            text-align: center;
+            padding: 0 20px;
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
-    <div class="header">
-        <h1>🎬 Catálogo</h1>
-        <span class="badge-count" id="videoCount">0 videos</span>
+    <header>
+        <div class="search-container">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Buscar por personaje, animador o tag...">
+        </div>
+        <button id="toggleNavBtn" class="nav-toggle-btn">Mostrar todas las etiquetas</button>
+    </header>
+
+    <!-- Navegación de etiquetas dinámica -->
+    <div id="tagsNav" class="tags-nav">
+        <div class="tag-section-title">Animadores</div>
+        <div id="animatorsCloud" class="tags-cloud"></div>
+        
+        <div class="tag-section-title">Personajes</div>
+        <div id="charactersCloud" class="tags-cloud"></div>
+        
+        <div class="tag-section-title">Universos</div>
+        <div id="universesCloud" class="tags-cloud"></div>
     </div>
 
-    <!-- ===== BUSCADOR ===== -->
-    <input type="text" class="search-box" id="searchInput" placeholder="🔍 Buscar por animador, personaje o universo..." autocomplete="off">
+    <!-- Contenido Principal -->
+    <main class="catalog-container">
+        <div id="resultsCounter" class="results-counter">Cargando catálogo...</div>
+        <div id="catalogList"></div>
+    </main>
 
-    <!-- ===== NAV ETIQUETAS ===== -->
-    <div class="tags-nav" id="tagsNav">
-        <!-- Se llena con JS -->
-    </div>
-
-    <!-- ===== LISTA DE VIDEOS ===== -->
-    <div class="video-list" id="videoList">
-        <!-- Se llena con JS -->
+    <!-- Intermediario de Redirección -->
+    <div id="redirectOverlay" class="redirect-overlay">
+        <div class="spinner"></div>
+        <div class="redirect-text">Abriendo enlace externo seguro...<br><span style="font-size:12px; color:#64748b; margin-top:8px; display:block;">Tu catálogo seguirá abierto aquí.</span></div>
     </div>
 
     <script>
-        // ================================================================
-        //  CONFIGURACIÓN
-        // ================================================================
+        let videosData = [];
+        let selectedTag = null;
 
-        // URL de tu archivo JSON (si está en el mismo dominio)
-        const JSON_URL = 'videos.json';
+        // Mapeo automático de imágenes oficiales de wikis (SFW) basadas en tus personajes
+        const wikiImages = {
+            "Columbina": "https://static.wikia.nocookie.net/gensin-impact/images/a/a2/Columbina_Icon.png",
+            "Mona": "https://static.wikia.nocookie.net/gensin-impact/images/a/a0/Mona_Card.png",
+            "Nefer": "https://static.wikia.nocookie.net/gensin-impact/images/f/f6/Character_Neuvillette_Thumb.png",
+            "Nilou": "https://static.wikia.nocookie.net/gensin-impact/images/5/58/Nilou_Card.png",
+            "Furina": "https://static.wikia.nocookie.net/gensin-impact/images/d/df/Furina_Card.png",
+            "Alice": "https://static.wikia.nocookie.net/gensin-impact/images/7/7b/Character_Klee_Thumb.png",
+            "Nicole": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4e/Character_Nicole_Thumb.png",
+            "Chevreuse": "https://static.wikia.nocookie.net/gensin-impact/images/5/53/Chevreuse_Card.png",
+            "Lynette": "https://static.wikia.nocookie.net/gensin-impact/images/1/1a/Lynette_Card.png",
+            "Linnea": "https://static.wikia.nocookie.net/gensin-impact/images/4/4a/Character_Lynette_Thumb.png",
+            "Chasca": "https://static.wikia.nocookie.net/gensin-impact/images/3/30/Chasca_Card.png",
+            "Fischl": "https://static.wikia.nocookie.net/gensin-impact/images/b/bb/Fischl_Card.png",
+            "Citlali": "https://static.wikia.nocookie.net/gensin-impact/images/d/df/Citlali_Card.png",
+            "Chiori": "https://static.wikia.nocookie.net/gensin-impact/images/a/a1/Chiori_Card.png"
+        };
 
-        // Si quieres IMÁGENES MANUALES, edita el campo "imagen" en el JSON
-        // Si está vacío, se genera automáticamente con el nombre del personaje
+        // Inyección de la base de datos limpia de videos
+        const rawJsonFromPython = [{"id": 1, "animator": "kekeanimations", "characters": ["Columbina"], "universe": "Genshin Impact", "title": "[kekeanimations] columbina (genshin impact)", "url": "https://playmogo.com/d/u8p171a19m8g"}, {"id": 2, "animator": "kekeanimations", "characters": ["Mona 3"], "universe": "Genshin Impact", "title": "[kekeanimations] mona 3 (genshin impact)", "url": "https://playmogo.com/d/pmhfylf256aj"}, {"id": 3, "animator": "kekeanimations", "characters": ["Mona 2"], "universe": "Genshin Impact", "title": "[kekeanimations] mona 2 (genshin impact)", "url": "https://playmogo.com/d/ldwyt8lg33cg"}, {"id": 4, "animator": "kekeanimations", "characters": ["Nefer"], "universe": "Genshin Impact", "title": "[kekeanimations] nefer (genshin impact)", "url": "https://playmogo.com/d/jpbhu2i5cg66"}, {"id": 5, "animator": "kekeanimations", "characters": ["Nilou"], "universe": "Genshin Impact", "title": "[kekeanimations] nilou (genshin impact)", "url": "https://playmogo.com/d/wxtmz4495g5u"}, {"id": 6, "animator": "kekeanimations", "characters": ["Furina"], "universe": "Genshin Impact", "title": "[kekeanimations] furina (genshin impact)", "url": "https://playmogo.com/d/8nvuc4vmyx7i"}, {"id": 7, "animator": "kekeanimations", "characters": ["Mona"], "universe": "Genshin Impact", "title": "[kekeanimations] mona (genshin impact)", "url": "https://playmogo.com/d/h8gzso4icp9n"}, {"id": 8, "animator": "kekeanimations", "characters": ["Alice", "Nicole Reeyn"], "universe": "Genshin Impact", "title": "[kekeanimations] alice and nicole reeyn (genshin impact)", "url": "https://playmogo.com/d/q4nev9iw1oq4"}, {"id": 9, "animator": "kekeanimations", "characters": ["Chevreuse"], "universe": "Genshin Impact", "title": "[kekeanimations] chevreuse (genshin impact)", "url": "https://playmogo.com/d/zuhkvtlbzhm3"}, {"id": 10, "animator": "kekeanimations", "characters": ["Lynette"], "universe": "Genshin Impact", "title": "[kekeanimations] lynette (genshin impact)", "url": "https://playmogo.com/d/cxssv94dx6qc"}, {"id": 11, "animator": "kekeanimations", "characters": ["Linnea"], "universe": "Genshin Impact", "title": "[kekeanimations] linnea (genshin impact)", "url": "https://playmogo.com/d/wvz4jttmmcux"}, {"id": 12, "animator": "kekeanimations", "characters": ["Chasca"], "universe": "Genshin Impact", "title": "[kekeanimations] chasca (genshin impact)", "url": "https://playmogo.com/d/axnksmhaj0tn"}, {"id": 13, "animator": "kekeanimations", "characters": ["Fischl"], "universe": "Genshin Impact", "title": "[kekeanimations] fischl (genshin impact)", "url": "https://playmogo.com/d/runj3m8ikimf"}, {"id": 14, "animator": "kekeanimations", "characters": ["Citlali"], "universe": "Genshin Impact", "title": "[kekeanimations] citlali (genshin impact)", "url": "https://playmogo.com/d/k11r4cq254xn"}, {"id": 15, "animator": "kekeanimations", "characters": ["Chiori"], "universe": "Genshin Impact", "title": "[kekeanimations] chiori (genshin impact)", "url": "https://playmogo.com/d/wt4odl4lcf90"}];
 
-        // ================================================================
-        //  CARGAR DATOS
-        // ================================================================
+        async function init() {
+            videosData = rawJsonFromPython;
+            generateTagsNav();
+            renderCatalog(videosData);
 
-        let videos = [];
-        let filtroActual = ''; // tag seleccionado
+            document.getElementById('searchBar').addEventListener('input', filterCatalog);
+            document.getElementById('toggleNavBtn').addEventListener('click', () => {
+                const nav = document.getElementById('tagsNav');
+                nav.classList.toggle('active');
+                document.getElementById('toggleNavBtn').innerText = nav.classList.contains('active') ? 'Ocultar etiquetas' : 'Mostrar todas las etiquetas';
+            });
+        }
 
-        async function cargarVideos() {
-            try {
-                const resp = await fetch(JSON_URL);
-                if (!resp.ok) throw new Error('No se pudo cargar videos.json');
-                videos = await resp.json();
-                // Asignar IDs si no tienen
-                videos.forEach((v, i) => { if (!v.id) v.id = i + 1; });
-                // Asegurar que personajes sea array
-                videos.forEach(v => {
-                    if (typeof v.personajes === 'string') {
-                        v.personajes = [v.personajes];
-                    }
-                    if (!v.imagen) {
-                        // Generar imagen automática con el primer personaje
-                        const nombre = v.personajes[0] || 'video';
-                        // Usamos placeholder con texto (puedes cambiarlo por una API de imágenes)
-                        v.imagen = `https://via.placeholder.com/400x200/1a1a2e/FFFFFF?text=${encodeURIComponent(nombre)}`;
-                        // ★ COMENTARIO: Para usar imagen manual, cambia el campo "imagen" en videos.json
-                        // Ejemplo: "imagen": "https://ejemplo.com/mi-imagen.jpg"
-                    }
+        function generateTagsNav() {
+            const animators = new Set();
+            const characters = new Set();
+            const universes = new Set();
+
+            videosData.forEach(v => {
+                if(v.animator) animators.add(v.animator);
+                if(v.universe) universes.add(v.universe);
+                v.characters.forEach(c => characters.add(c));
+            });
+
+            buildCloud('animatorsCloud', animators, 'animator');
+            buildCloud('charactersCloud', characters, 'character');
+            buildCloud('universesCloud', universes, 'universe');
+        }
+
+        function buildCloud(elementId, set, type) {
+            const cloud = document.getElementById(elementId);
+            cloud.innerHTML = '';
+            Array.from(set).sort().forEach(value => {
+                const span = document.createElement('span');
+                span.className = 'tag';
+                span.innerText = value;
+                span.addEventListener('click', () => handleTagClick(span, value, type));
+                cloud.appendChild(span);
+            });
+        }
+
+        function handleTagClick(element, value, type) {
+            const allTags = document.querySelectorAll('.tag');
+            
+            if (element.classList.contains('active')) {
+                element.classList.remove('active');
+                selectedTag = null;
+            } else {
+                allTags.forEach(t => t.classList.remove('active'));
+                element.classList.add('active');
+                selectedTag = { value, type };
+            }
+            filterCatalog();
+        }
+
+        function filterCatalog() {
+            const query = document.getElementById('searchBar').value.toLowerCase().trim();
+            let filtered = videosData;
+
+            if (selectedTag) {
+                filtered = filtered.filter(v => {
+                    if (selectedTag.type === 'animator') return v.animator === selectedTag.value;
+                    if (selectedTag.type === 'universe') return v.universe === selectedTag.value;
+                    if (selectedTag.type === 'character') return v.characters.includes(selectedTag.value);
+                    return true;
                 });
-                renderizarTodo();
-            } catch (error) {
-                document.getElementById('videoList').innerHTML = `
-                    <div class="no-results">
-                        ⚠️ Error al cargar videos: ${error.message}<br>
-                        <small>Verifica que videos.json existe y está bien formado.</small>
+            }
+
+            if (query) {
+                filtered = filtered.filter(v => {
+                    const matchTitle = v.title.toLowerCase().includes(query);
+                    const matchAnimator = v.animator.toLowerCase().includes(query);
+                    const matchUniverse = v.universe.toLowerCase().includes(query);
+                    const matchCharacters = v.characters.some(c => c.toLowerCase().includes(query));
+                    return matchTitle || matchAnimator || matchUniverse || matchCharacters;
+                });
+            }
+
+            renderCatalog(filtered);
+        }
+
+        function renderCatalog(list) {
+            const catalogList = document.getElementById('catalogList');
+            const counter = document.getElementById('resultsCounter');
+            
+            catalogList.innerHTML = '';
+            counter.innerText = `${list.length} videos encontrados`;
+
+            if(list.length === 0) {
+                catalogList.innerHTML = '<div style="text-align:center; padding:40px; color:#64748b;">No se encontraron videos.</div>';
+                return;
+            }
+
+            list.forEach(video => {
+                const card = document.createElement('div');
+                card.className = 'video-card';
+
+                const primaryCharacter = video.characters[0] || "";
+                const imgUrl = wikiImages[primaryCharacter] || "";
+                
+                let imageHtml = '';
+                if (imgUrl) {
+                    imageHtml = `<img src="${imgUrl}" alt="${primaryCharacter}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">`;
+                }
+                
+                const initial = primaryCharacter ? primaryCharacter.charAt(0) : "🎬";
+
+                card.innerHTML = `
+                    <div class="card-image-box">
+                        ${imageHtml}
+                        <div class="avatar-placeholder" style="${imgUrl ? 'display:none;' : 'display:block;'}">${initial}</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="video-title">${video.title}</div>
+                        <div class="card-tags">
+                            <span class="badge badge-animator">@${video.animator}</span>
+                            ${video.characters.map(c => `<span class="badge badge-character">${c}</span>`).join('')}
+                            <span class="badge badge-universe">🌌 ${video.universe}</span>
+                        </div>
+                        <button class="action-button" onclick="secureRedirect('${video.url}')">Ver Video</button>
                     </div>
                 `;
-                console.error(error);
-            }
-        }
-
-        // ================================================================
-        //  RENDERIZAR
-        // ================================================================
-
-        function renderizarTodo() {
-            const searchText = document.getElementById('searchInput').value.toLowerCase().trim();
-            const filtroTag = filtroActual.toLowerCase();
-
-            // Filtrar
-            const filtrados = videos.filter(v => {
-                // Filtro por tag
-                if (filtroTag) {
-                    const animadorMatch = v.animador.toLowerCase().includes(filtroTag);
-                    const personajesMatch = v.personajes.some(p => p.toLowerCase().includes(filtroTag));
-                    const universoMatch = v.universo.toLowerCase().includes(filtroTag);
-                    if (!animadorMatch && !personajesMatch && !universoMatch) return false;
-                }
-                // Búsqueda por texto
-                if (searchText) {
-                    const animadorMatch = v.animador.toLowerCase().includes(searchText);
-                    const personajesMatch = v.personajes.some(p => p.toLowerCase().includes(searchText));
-                    const universoMatch = v.universo.toLowerCase().includes(searchText);
-                    if (!animadorMatch && !personajesMatch && !universoMatch) return false;
-                }
-                return true;
-            });
-
-            // Actualizar contador
-            document.getElementById('videoCount').textContent = `${filtrados.length} videos`;
-
-            // Renderizar lista
-            const listEl = document.getElementById('videoList');
-            if (filtrados.length === 0) {
-                listEl.innerHTML = `<div class="no-results">😕 No se encontraron videos</div>`;
-            } else {
-                listEl.innerHTML = filtrados.map(v => `
-                    <div class="video-card">
-                        <img src="${v.imagen}" alt="${v.personajes.join(' y ')}" loading="lazy" 
-                             onerror="this.src='https://via.placeholder.com/400x200/1a1a2e/555?text=Sin+imagen'">
-                        <div class="video-info">
-                            <div class="video-title">
-                                <span class="animador">[${v.animador}]</span>
-                                <span class="personajes">${v.personajes.join(' y ')}</span>
-                                <span class="universo">(${v.universo})</span>
-                            </div>
-                            <div class="video-tags">
-                                <span class="tag-animador">🎨 ${v.animador}</span>
-                                ${v.personajes.map(p => `<span class="tag-personaje">👤 ${p}</span>`).join('')}
-                                <span class="tag-universo">🌌 ${v.universo}</span>
-                            </div>
-                            <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="btn-ver">▶ Ver video</a>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            // Renderizar nave de etiquetas
-            renderizarTags();
-        }
-
-        // ================================================================
-        //  NAV DE ETIQUETAS (con colores y conteo)
-        // ================================================================
-
-        function renderizarTags() {
-            const nav = document.getElementById('tagsNav');
-            // Extraer todas las etiquetas únicas
-            const tagsSet = new Set();
-            videos.forEach(v => {
-                tagsSet.add(`🎨 ${v.animador}`);
-                v.personajes.forEach(p => tagsSet.add(`👤 ${p}`));
-                tagsSet.add(`🌌 ${v.universo}`);
-            });
-            const tags = Array.from(tagsSet).sort();
-
-            // Determinar tipo para color
-            function getTagType(label) {
-                if (label.startsWith('🎨')) return 'tag-animador';
-                if (label.startsWith('👤')) return 'tag-personaje';
-                if (label.startsWith('🌌')) return 'tag-universo';
-                return '';
-            }
-
-            // Extraer texto puro para comparar con filtro
-            function getTagText(label) {
-                return label.replace(/^[🎨👤🌌]\s*/, '').toLowerCase();
-            }
-
-            const html = `
-                <button class="tag-btn ${filtroActual === '' ? 'active' : ''}" 
-                        data-tag="">📋 Todos</button>
-                ${tags.map(label => `
-                    <button class="tag-btn ${getTagType(label)} ${filtroActual === getTagText(label) ? 'active' : ''}" 
-                            data-tag="${getTagText(label)}">
-                        ${label}
-                    </button>
-                `).join('')}
-            `;
-            nav.innerHTML = html;
-
-            // Eventos
-            nav.querySelectorAll('.tag-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const tag = btn.dataset.tag;
-                    filtroActual = tag;
-                    // Limpiar búsqueda al seleccionar tag? No, se combinan
-                    renderizarTodo();
-                });
+                catalogList.appendChild(card);
             });
         }
 
-        // ================================================================
-        //  BUSCADOR EN TIEMPO REAL
-        // ================================================================
+        function secureRedirect(url) {
+            const overlay = document.getElementById('redirectOverlay');
+            overlay.classList.add('active');
+            
+            setTimeout(() => {
+                window.open(url, '_blank');
+                overlay.classList.remove('active');
+            }, 1200);
+        }
 
-        document.getElementById('searchInput').addEventListener('input', () => {
-            // Si hay texto en búsqueda, limpiamos filtro de tag para no confundir
-            // (opcional: puedes comentar esta línea si quieres que se combinen)
-            // filtroActual = '';
-            renderizarTodo();
-        });
-
-        // ================================================================
-        //  INICIAR
-        // ================================================================
-
-        cargarVideos();
+        window.addEventListener('DOMContentLoaded', init);
     </script>
-
 </body>
 </html>
