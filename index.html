@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Catálogo de Videos</title>
+    <style>
+        /* ===== RESET Y BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            padding: 16px 12px 80px 12px;
+            min-height: 100vh;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .header h1 {
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .badge-count {
+            font-size: 13px;
+            color: #888;
+            background: #1a1a2e;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid #2a2a4e;
+        }
+
+        /* ===== BUSCADOR ===== */
+        .search-box {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid #2a2a4e;
+            background: #12121f;
+            color: #e0e0e0;
+            font-size: 15px;
+            margin-bottom: 14px;
+            outline: none;
+            transition: border 0.2s;
+        }
+        .search-box:focus {
+            border-color: #f5576c;
+        }
+        .search-box::placeholder {
+            color: #555;
+        }
+
+        /* ===== NAV ETIQUETAS ===== */
+        .tags-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #1a1a2e;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+        .tag-btn {
+            background: #1a1a2e;
+            border: 1px solid #2a2a4e;
+            color: #aaa;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .tag-btn:hover {
+            background: #2a2a4e;
+            color: #fff;
+        }
+        .tag-btn.active {
+            background: #f5576c;
+            border-color: #f5576c;
+            color: #fff;
+        }
+        .tag-btn.tag-animador { border-color: #f093fb; }
+        .tag-btn.tag-personaje { border-color: #4facfe; }
+        .tag-btn.tag-universo { border-color: #43e97b; }
+
+        /* ===== LISTA DE VIDEOS ===== */
+        .video-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* ===== TARJETA ===== */
+        .video-card {
+            background: #12121f;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #1a1a2e;
+            transition: transform 0.15s, border-color 0.2s;
+        }
+        .video-card:active {
+            transform: scale(0.98);
+        }
+
+        .video-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            background: #1a1a2e;
+        }
+
+        .video-info {
+            padding: 12px 14px 14px 14px;
+        }
+
+        .video-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .video-title .animador {
+            color: #f093fb;
+        }
+        .video-title .personajes {
+            color: #4facfe;
+        }
+        .video-title .universo {
+            color: #43e97b;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .video-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 8px 0 10px 0;
+        }
+        .video-tags span {
+            font-size: 10px;
+            background: #1a1a2e;
+            padding: 2px 10px;
+            border-radius: 12px;
+            border: 1px solid #2a2a4e;
+            color: #888;
+        }
+        .video-tags .tag-animador { border-color: #f093fb44; color: #f093fb; }
+        .video-tags .tag-personaje { border-color: #4facfe44; color: #4facfe; }
+        .video-tags .tag-universo { border-color: #43e97b44; color: #43e97b; }
+
+        .btn-ver {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.1s;
+            width: 100%;
+            text-align: center;
+        }
+        .btn-ver:active {
+            transform: scale(0.97);
+            opacity: 0.8;
+        }
+
+        /* ===== MENSAJE SIN RESULTADOS ===== */
+        .no-results {
+            text-align: center;
+            color: #555;
+            padding: 40px 0;
+            font-size: 15px;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a4e;
+            border-radius: 4px;
+        }
+
+        /* ===== RESPONSIVE PEQUEÑO ===== */
+        @media (max-width: 400px) {
+            .video-card img {
+                height: 150px;
+            }
+            .video-title {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <div class="header">
+        <h1>🎬 Catálogo</h1>
+        <span class="badge-count" id="videoCount">0 videos</span>
+    </div>
+
+    <!-- ===== BUSCADOR ===== -->
+    <input type="text" class="search-box" id="searchInput" placeholder="🔍 Buscar por animador, personaje o universo..." autocomplete="off">
+
+    <!-- ===== NAV ETIQUETAS ===== -->
+    <div class="tags-nav" id="tagsNav">
+        <!-- Se llena con JS -->
+    </div>
+
+    <!-- ===== LISTA DE VIDEOS ===== -->
+    <div class="video-list" id="videoList">
+        <!-- Se llena con JS -->
+    </div>
+
+    <script>
+        // ================================================================
+        //  CONFIGURACIÓN
+        // ================================================================
+
+        // URL de tu archivo JSON (si está en el mismo dominio)
+        const JSON_URL = 'videos.json';
+
+        // Si quieres IMÁGENES MANUALES, edita el campo "imagen" en el JSON
+        // Si está vacío, se genera automáticamente con el nombre del personaje
+
+        // ================================================================
+        //  CARGAR DATOS
+        // ================================================================
+
+        let videos = [];
+        let filtroActual = ''; // tag seleccionado
+
+        async function cargarVideos() {
+            try {
+                const resp = await fetch(JSON_URL);
+                if (!resp.ok) throw new Error('No se pudo cargar videos.json');
+                videos = await resp.json();
+                // Asignar IDs si no tienen
+                videos.forEach((v, i) => { if (!v.id) v.id = i + 1; });
+                // Asegurar que personajes sea array
+                videos.forEach(v => {
+                    if (typeof v.personajes === 'string') {
+                        v.personajes = [v.personajes];
+                    }
+                    if (!v.imagen) {
+                        // Generar imagen automática con el primer personaje
+                        const nombre = v.personajes[0] || 'video';
+                        // Usamos placeholder con texto (puedes cambiarlo por una API de imágenes)
+                        v.imagen = `https://via.placeholder.com/400x200/1a1a2e/FFFFFF?text=${encodeURIComponent(nombre)}`;
+                        // ★ COMENTARIO: Para usar imagen manual, cambia el campo "imagen" en videos.json
+                        // Ejemplo: "imagen": "https://ejemplo.com/mi-imagen.jpg"
+                    }
+                });
+                renderizarTodo();
+            } catch (error) {
+                document.getElementById('videoList').innerHTML = `
+                    <div class="no-results">
+                        ⚠️ Error al cargar videos: ${error.message}<br>
+                        <small>Verifica que videos.json existe y está bien formado.</small>
+                    </div>
+                `;
+                console.error(error);
+            }
+        }
+
+        // ================================================================
+        //  RENDERIZAR
+        // ================================================================
+
+        function renderizarTodo() {
+            const searchText = document.getElementById('searchInput').value.toLowerCase().trim();
+            const filtroTag = filtroActual.toLowerCase();
+
+            // Filtrar
+            const filtrados = videos.filter(v => {
+                // Filtro por tag
+                if (filtroTag) {
+                    const animadorMatch = v.animador.toLowerCase().includes(filtroTag);
+                    const personajesMatch = v.personajes.some(p => p.toLowerCase().includes(filtroTag));
+                    const universoMatch = v.universo.toLowerCase().includes(filtroTag);
+                    if (!animadorMatch && !personajesMatch && !universoMatch) return false;
+                }
+                // Búsqueda por texto
+                if (searchText) {
+                    const animadorMatch = v.animador.toLowerCase().includes(searchText);
+                    const personajesMatch = v.personajes.some(p => p.toLowerCase().includes(searchText));
+                    const universoMatch = v.universo.toLowerCase().includes(searchText);
+                    if (!animadorMatch && !personajesMatch && !universoMatch) return false;
+                }
+                return true;
+            });
+
+            // Actualizar contador
+            document.getElementById('videoCount').textContent = `${filtrados.length} videos`;
+
+            // Renderizar lista
+            const listEl = document.getElementById('videoList');
+            if (filtrados.length === 0) {
+                listEl.innerHTML = `<div class="no-results">😕 No se encontraron videos</div>`;
+            } else {
+                listEl.innerHTML = filtrados.map(v => `
+                    <div class="video-card">
+                        <img src="${v.imagen}" alt="${v.personajes.join(' y ')}" loading="lazy" 
+                             onerror="this.src='https://via.placeholder.com/400x200/1a1a2e/555?text=Sin+imagen'">
+                        <div class="video-info">
+                            <div class="video-title">
+                                <span class="animador">[${v.animador}]</span>
+                                <span class="personajes">${v.personajes.join(' y ')}</span>
+                                <span class="universo">(${v.universo})</span>
+                            </div>
+                            <div class="video-tags">
+                                <span class="tag-animador">🎨 ${v.animador}</span>
+                                ${v.personajes.map(p => `<span class="tag-personaje">👤 ${p}</span>`).join('')}
+                                <span class="tag-universo">🌌 ${v.universo}</span>
+                            </div>
+                            <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="btn-ver">▶ Ver video</a>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Renderizar nave de etiquetas
+            renderizarTags();
+        }
+
+        // ================================================================
+        //  NAV DE ETIQUETAS (con colores y conteo)
+        // ================================================================
+
+        function renderizarTags() {
+            const nav = document.getElementById('tagsNav');
+            // Extraer todas las etiquetas únicas
+            const tagsSet = new Set();
+            videos.forEach(v => {
+                tagsSet.add(`🎨 ${v.animador}`);
+                v.personajes.forEach(p => tagsSet.add(`👤 ${p}`));
+                tagsSet.add(`🌌 ${v.universo}`);
+            });
+            const tags = Array.from(tagsSet).sort();
+
+            // Determinar tipo para color
+            function getTagType(label) {
+                if (label.startsWith('🎨')) return 'tag-animador';
+                if (label.startsWith('👤')) return 'tag-personaje';
+                if (label.startsWith('🌌')) return 'tag-universo';
+                return '';
+            }
+
+            // Extraer texto puro para comparar con filtro
+            function getTagText(label) {
+                return label.replace(/^[🎨👤🌌]\s*/, '').toLowerCase();
+            }
+
+            const html = `
+                <button class="tag-btn ${filtroActual === '' ? 'active' : ''}" 
+                        data-tag="">📋 Todos</button>
+                ${tags.map(label => `
+                    <button class="tag-btn ${getTagType(label)} ${filtroActual === getTagText(label) ? 'active' : ''}" 
+                            data-tag="${getTagText(label)}">
+                        ${label}
+                    </button>
+                `).join('')}
+            `;
+            nav.innerHTML = html;
+
+            // Eventos
+            nav.querySelectorAll('.tag-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tag = btn.dataset.tag;
+                    filtroActual = tag;
+                    // Limpiar búsqueda al seleccionar tag? No, se combinan
+                    renderizarTodo();
+                });
+            });
+        }
+
+        // ================================================================
+        //  BUSCADOR EN TIEMPO REAL
+        // ================================================================
+
+        document.getElementById('searchInput').addEventListener('input', () => {
+            // Si hay texto en búsqueda, limpiamos filtro de tag para no confundir
+            // (opcional: puedes comentar esta línea si quieres que se combinen)
+            // filtroActual = '';
+            renderizarTodo();
+        });
+
+        // ================================================================
+        //  INICIAR
+        // ================================================================
+
+        cargarVideos();
+    </script>
+
+</body>
+</html>
