@@ -5,7 +5,7 @@
     "personajes": ["columbina"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/u8p171a19m8g",
-    "imagen": "" // ← Deja vacío para auto-generar, o pon URL manual
+    "imagen": ""
   },
   {
     "id": 2,
