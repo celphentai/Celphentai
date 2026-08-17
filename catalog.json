@@ -1,122 +1,122 @@
 [
   {
-    "id": 1,
+    "id": "001001",
     "animador": "kekeanimations",
     "personajes": ["columbina"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/u8p171a19m8g",
-    "imagen": ""
+    "imagen": "columbina.jpg"
   },
   {
-    "id": 2,
+    "id": "001002",
     "animador": "kekeanimations",
-    "personajes": ["mona"],
+    "personajes": ["mona 1"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/pmhfylf256aj",
-    "imagen": "https://genshin-impact.fandom.com/es/wiki/Mona?file=Mona_Card.png"
+    "imagen": "mona.jpg"
   },
   {
-    "id": 3,
+    "id": "001003",
     "animador": "kekeanimations",
-    "personajes": ["mona"],
+    "personajes": ["mona 2"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/ldwyt8lg33cg",
-    "imagen": ""
+    "imagen": "mona.jpg"
   },
   {
-    "id": 4,
+    "id": "001004",
     "animador": "kekeanimations",
     "personajes": ["nefer"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/jpbhu2i5cg66",
-    "imagen": ""
+    "imagen": "nefer.jpg"
   },
   {
-    "id": 5,
+    "id": "001005",
     "animador": "kekeanimations",
     "personajes": ["nilou"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/wxtmz4495g5u",
-    "imagen": ""
+    "imagen": "nilou.jpg"
   },
   {
-    "id": 6,
+    "id": "001006",
     "animador": "kekeanimations",
     "personajes": ["furina"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/8nvuc4vmyx7i",
-    "imagen": ""
+    "imagen": "furina.jpg"
   },
   {
-    "id": 7,
+    "id": "001007",
     "animador": "kekeanimations",
-    "personajes": ["mona"],
+    "personajes": ["mona 3"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/h8gzso4icp9n",
-    "imagen": "https://static.wikia.nocookie.net/gen-impact/images/9/9f/Mona_Card.png/revision/latest?cb=20210323192823&path-prefix=es"
+    "imagen": "mona.jpg"
   },
   {
-    "id": 8,
+    "id": "001008",
     "animador": "kekeanimations",
     "personajes": ["alice", "nicole reeyn"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/q4nev9iw1oq4",
-    "imagen": ""
+    "imagen": "alice.jpg"
   },
   {
-    "id": 9,
+    "id": "001009",
     "animador": "kekeanimations",
     "personajes": ["chevreuse"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/zuhkvtlbzhm3",
-    "imagen": ""
+    "imagen": "chevreuse.jpg"
   },
   {
-    "id": 10,
+    "id": "001010",
     "animador": "kekeanimations",
     "personajes": ["lynette"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/cxssv94dx6qc",
-    "imagen": ""
+    "imagen": "lynette.jpg"
   },
   {
-    "id": 11,
+    "id": "001011",
     "animador": "kekeanimations",
     "personajes": ["linnea"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/wvz4jttmmcux",
-    "imagen": ""
+    "imagen": "linnea.jpg"
   },
   {
-    "id": 12,
+    "id": "001012",
     "animador": "kekeanimations",
     "personajes": ["chasca"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/axnksmhaj0tn",
-    "imagen": ""
+    "imagen": "chasca.jpg"
   },
   {
-    "id": 13,
+    "id": "001013",
     "animador": "kekeanimations",
     "personajes": ["fischl"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/runj3m8ikimf",
-    "imagen": ""
+    "imagen": "fischl.jpg"
   },
   {
-    "id": 14,
+    "id": "001014",
     "animador": "kekeanimations",
     "personajes": ["citlali"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/k11r4cq254xn",
-    "imagen": ""
+    "imagen": "citlali.jpg"
   },
   {
-    "id": 15,
+    "id": "001015",
     "animador": "kekeanimations",
     "personajes": ["chiori"],
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/wt4odl4lcf90",
-    "imagen": ""
+    "imagen": "chiori.jpg"
   }
 ]
