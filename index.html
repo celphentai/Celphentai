@@ -4,14 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Catalog</title>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K4BM5L6G');</script>
-<!-- End Google Tag Manager -->
-
     <meta name="referrer" content="no-referrer">
 
     <style>
@@ -109,6 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: #cbd5e1;
             cursor: pointer;
             border: 1px solid transparent;
+            text-transform: capitalize;
         }
 
         .tag.active {
@@ -138,7 +131,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transform: scale(0.98);
         }
 
-        /* Imagen Retrato arriba */
         .card-image-box {
             width: 100%;
             height: 240px;
@@ -157,7 +149,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             object-position: top center;
         }
 
-        /* Fallback placeholder estético */
         .avatar-placeholder {
             font-size: 64px;
             font-weight: 800;
@@ -176,6 +167,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             line-height: 1.4;
             color: #f1f5f9;
             margin-bottom: 12px;
+            text-transform: capitalize;
         }
 
         .card-tags {
@@ -190,6 +182,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding: 2px 8px;
             border-radius: 4px;
             font-weight: 500;
+            text-transform: capitalize;
         }
 
         .badge-animator { background-color: #1e293b; color: #94a3b8; }
@@ -216,7 +209,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-color: #4338ca;
         }
 
-        /* Contador de resultados */
         .results-counter {
             font-size: 13px;
             color: #64748b;
@@ -224,7 +216,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-align: right;
         }
 
-        /* Intermediario de Carga Seguro (Modal) */
+        /* Modal Intermediario */
         .redirect-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -269,10 +261,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4BM5L6G"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
     <header>
         <div class="search-container">
             <input type="text" id="searchBar" class="search-bar" placeholder="Buscar por personaje, animador o tag...">
@@ -280,7 +269,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button id="toggleNavBtn" class="nav-toggle-btn">Mostrar todas las etiquetas</button>
     </header>
 
-    <!-- Navegación de etiquetas dinámica -->
     <div id="tagsNav" class="tags-nav">
         <div class="tag-section-title">Animadores</div>
         <div id="animatorsCloud" class="tags-cloud"></div>
@@ -292,13 +280,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div id="universesCloud" class="tags-cloud"></div>
     </div>
 
-    <!-- Contenido Principal -->
     <main class="catalog-container">
         <div id="resultsCounter" class="results-counter">Cargando catálogo...</div>
         <div id="catalogList"></div>
     </main>
 
-    <!-- Intermediario de Redirección -->
     <div id="redirectOverlay" class="redirect-overlay">
         <div class="spinner"></div>
         <div class="redirect-text">Abriendo enlace externo seguro...<br><span style="font-size:12px; color:#64748b; margin-top:8px; display:block;">Tu catálogo seguirá abierto aquí.</span></div>
@@ -307,39 +293,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
         let videosData = [];
         let selectedTag = null;
+        const IMAGES_FOLDER = 'imagenes/';
 
-        // Mapeo automático de imágenes oficiales de wikis (SFW) basadas en tus personajes
-        const wikiImages = {
-            "Columbina": "https://static.wikia.nocookie.net/gensin-impact/images/a/a2/Columbina_Icon.png",
-            "Mona": "https://static.wikia.nocookie.net/gensin-impact/images/a/a0/Mona_Card.png",
-            "Nefer": "https://static.wikia.nocookie.net/gensin-impact/images/f/f6/Character_Neuvillette_Thumb.png",
-            "Nilou": "https://static.wikia.nocookie.net/gensin-impact/images/5/58/Nilou_Card.png",
-            "Furina": "https://static.wikia.nocookie.net/gensin-impact/images/d/df/Furina_Card.png",
-            "Alice": "https://static.wikia.nocookie.net/gensin-impact/images/7/7b/Character_Klee_Thumb.png",
-            "Nicole": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4e/Character_Nicole_Thumb.png",
-            "Chevreuse": "https://static.wikia.nocookie.net/gensin-impact/images/5/53/Chevreuse_Card.png",
-            "Lynette": "https://static.wikia.nocookie.net/gensin-impact/images/1/1a/Lynette_Card.png",
-            "Linnea": "https://static.wikia.nocookie.net/gensin-impact/images/4/4a/Character_Lynette_Thumb.png",
-            "Chasca": "https://static.wikia.nocookie.net/gensin-impact/images/3/30/Chasca_Card.png",
-            "Fischl": "https://static.wikia.nocookie.net/gensin-impact/images/b/bb/Fischl_Card.png",
-            "Citlali": "https://static.wikia.nocookie.net/gensin-impact/images/d/df/Citlali_Card.png",
-            "Chiori": "https://static.wikia.nocookie.net/gensin-impact/images/a/a1/Chiori_Card.png"
-        };
-
-        // Inyección de la base de datos limpia de videos
-        const rawJsonFromPython = [{"id": 1, "animator": "kekeanimations", "characters": ["Columbina"], "universe": "Genshin Impact", "title": "[kekeanimations] columbina (genshin impact)", "url": "https://playmogo.com/d/u8p171a19m8g"}, {"id": 2, "animator": "kekeanimations", "characters": ["Mona 3"], "universe": "Genshin Impact", "title": "[kekeanimations] mona 3 (genshin impact)", "url": "https://playmogo.com/d/pmhfylf256aj"}, {"id": 3, "animator": "kekeanimations", "characters": ["Mona 2"], "universe": "Genshin Impact", "title": "[kekeanimations] mona 2 (genshin impact)", "url": "https://playmogo.com/d/ldwyt8lg33cg"}, {"id": 4, "animator": "kekeanimations", "characters": ["Nefer"], "universe": "Genshin Impact", "title": "[kekeanimations] nefer (genshin impact)", "url": "https://playmogo.com/d/jpbhu2i5cg66"}, {"id": 5, "animator": "kekeanimations", "characters": ["Nilou"], "universe": "Genshin Impact", "title": "[kekeanimations] nilou (genshin impact)", "url": "https://playmogo.com/d/wxtmz4495g5u"}, {"id": 6, "animator": "kekeanimations", "characters": ["Furina"], "universe": "Genshin Impact", "title": "[kekeanimations] furina (genshin impact)", "url": "https://playmogo.com/d/8nvuc4vmyx7i"}, {"id": 7, "animator": "kekeanimations", "characters": ["Mona"], "universe": "Genshin Impact", "title": "[kekeanimations] mona (genshin impact)", "url": "https://playmogo.com/d/h8gzso4icp9n"}, {"id": 8, "animator": "kekeanimations", "characters": ["Alice", "Nicole Reeyn"], "universe": "Genshin Impact", "title": "[kekeanimations] alice and nicole reeyn (genshin impact)", "url": "https://playmogo.com/d/q4nev9iw1oq4"}, {"id": 9, "animator": "kekeanimations", "characters": ["Chevreuse"], "universe": "Genshin Impact", "title": "[kekeanimations] chevreuse (genshin impact)", "url": "https://playmogo.com/d/zuhkvtlbzhm3"}, {"id": 10, "animator": "kekeanimations", "characters": ["Lynette"], "universe": "Genshin Impact", "title": "[kekeanimations] lynette (genshin impact)", "url": "https://playmogo.com/d/cxssv94dx6qc"}, {"id": 11, "animator": "kekeanimations", "characters": ["Linnea"], "universe": "Genshin Impact", "title": "[kekeanimations] linnea (genshin impact)", "url": "https://playmogo.com/d/wvz4jttmmcux"}, {"id": 12, "animator": "kekeanimations", "characters": ["Chasca"], "universe": "Genshin Impact", "title": "[kekeanimations] chasca (genshin impact)", "url": "https://playmogo.com/d/axnksmhaj0tn"}, {"id": 13, "animator": "kekeanimations", "characters": ["Fischl"], "universe": "Genshin Impact", "title": "[kekeanimations] fischl (genshin impact)", "url": "https://playmogo.com/d/runj3m8ikimf"}, {"id": 14, "animator": "kekeanimations", "characters": ["Citlali"], "universe": "Genshin Impact", "title": "[kekeanimations] citlali (genshin impact)", "url": "https://playmogo.com/d/k11r4cq254xn"}, {"id": 15, "animator": "kekeanimations", "characters": ["Chiori"], "universe": "Genshin Impact", "title": "[kekeanimations] chiori (genshin impact)", "url": "https://playmogo.com/d/wt4odl4lcf90"}];
+        // Función para normalizar etiquetas de personajes (ej: "Mona 1", "Mona 2" -> "mona")
+        function normalizeTag(name) {
+            if (!name) return '';
+            return name.toLowerCase().replace(/\s+\d+$/g, '').trim();
+        }
 
         async function init() {
-            videosData = rawJsonFromPython;
-            generateTagsNav();
-            renderCatalog(videosData);
+            try {
+                // Carga el archivo JSON externo
+                const response = await fetch('catalog.json');
+                if (!response.ok) throw new Error('No se pudo cargar el archivo catalog.json');
+                videosData = await response.json();
 
-            document.getElementById('searchBar').addEventListener('input', filterCatalog);
-            document.getElementById('toggleNavBtn').addEventListener('click', () => {
-                const nav = document.getElementById('tagsNav');
-                nav.classList.toggle('active');
-                document.getElementById('toggleNavBtn').innerText = nav.classList.contains('active') ? 'Ocultar etiquetas' : 'Mostrar todas las etiquetas';
-            });
+                generateTagsNav();
+                renderCatalog(videosData);
+
+                document.getElementById('searchBar').addEventListener('input', filterCatalog);
+                document.getElementById('toggleNavBtn').addEventListener('click', () => {
+                    const nav = document.getElementById('tagsNav');
+                    nav.classList.toggle('active');
+                    document.getElementById('toggleNavBtn').innerText = nav.classList.contains('active') ? 'Ocultar etiquetas' : 'Mostrar todas las etiquetas';
+                });
+            } catch (error) {
+                console.error('Error al inicializar el catálogo:', error);
+                document.getElementById('resultsCounter').innerText = 'Error al cargar el archivo JSON.';
+            }
         }
 
         function generateTagsNav() {
@@ -348,9 +329,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const universes = new Set();
 
             videosData.forEach(v => {
-                if(v.animator) animators.add(v.animator);
-                if(v.universe) universes.add(v.universe);
-                v.characters.forEach(c => characters.add(c));
+                if (v.animador) animators.add(v.animador.toLowerCase().trim());
+                if (v.universo) universes.add(v.universo.toLowerCase().trim());
+                if (Array.isArray(v.personajes)) {
+                    v.personajes.forEach(c => {
+                        const cleanTag = normalizeTag(c);
+                        if (cleanTag) characters.add(cleanTag);
+                    });
+                }
             });
 
             buildCloud('animatorsCloud', animators, 'animator');
@@ -390,20 +376,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             if (selectedTag) {
                 filtered = filtered.filter(v => {
-                    if (selectedTag.type === 'animator') return v.animator === selectedTag.value;
-                    if (selectedTag.type === 'universe') return v.universe === selectedTag.value;
-                    if (selectedTag.type === 'character') return v.characters.includes(selectedTag.value);
+                    if (selectedTag.type === 'animator') return v.animador && v.animador.toLowerCase().trim() === selectedTag.value;
+                    if (selectedTag.type === 'universe') return v.universo && v.universo.toLowerCase().trim() === selectedTag.value;
+                    if (selectedTag.type === 'character') {
+                        return v.personajes && v.personajes.some(c => normalizeTag(c) === selectedTag.value);
+                    }
                     return true;
                 });
             }
 
             if (query) {
                 filtered = filtered.filter(v => {
-                    const matchTitle = v.title.toLowerCase().includes(query);
-                    const matchAnimator = v.animator.toLowerCase().includes(query);
-                    const matchUniverse = v.universe.toLowerCase().includes(query);
-                    const matchCharacters = v.characters.some(c => c.toLowerCase().includes(query));
-                    return matchTitle || matchAnimator || matchUniverse || matchCharacters;
+                    const matchAnimator = v.animador ? v.animador.toLowerCase().includes(query) : false;
+                    const matchUniverse = v.universo ? v.universo.toLowerCase().includes(query) : false;
+                    const matchCharacters = v.personajes ? v.personajes.some(c => c.toLowerCase().includes(query) || normalizeTag(c).includes(query)) : false;
+                    const matchId = v.id ? v.id.includes(query) : false;
+                    return matchAnimator || matchUniverse || matchCharacters || matchId;
                 });
             }
 
@@ -415,9 +403,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const counter = document.getElementById('resultsCounter');
             
             catalogList.innerHTML = '';
-            counter.innerText = `${list.length} videos encontrados`;
+            counter.innerText = `${list.length} video(s) encontrado(s)`;
 
-            if(list.length === 0) {
+            if (list.length === 0) {
                 catalogList.innerHTML = '<div style="text-align:center; padding:40px; color:#64748b;">No se encontraron videos.</div>';
                 return;
             }
@@ -426,27 +414,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 const card = document.createElement('div');
                 card.className = 'video-card';
 
-                const primaryCharacter = video.characters[0] || "";
-                const imgUrl = wikiImages[primaryCharacter] || "";
+                const primaryCharacter = (video.personajes && video.personajes[0]) ? video.personajes[0] : "";
+                const cleanCharacterTag = normalizeTag(primaryCharacter);
+                
+                // Construcción de la ruta local para la imagen
+                const imgPath = video.imagen ? `${IMAGES_FOLDER}${video.imagen}` : '';
                 
                 let imageHtml = '';
-                if (imgUrl) {
-                    imageHtml = `<img src="${imgUrl}" alt="${primaryCharacter}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">`;
+                if (imgPath) {
+                    imageHtml = `<img src="${imgPath}" alt="${cleanCharacterTag}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">`;
                 }
                 
-                const initial = primaryCharacter ? primaryCharacter.charAt(0) : "🎬";
+                const initial = cleanCharacterTag ? cleanCharacterTag.charAt(0).toUpperCase() : "🎬";
+                const displayTitle = `[${video.animador}] ${video.personajes.join(', ')} (${video.universo})`;
 
                 card.innerHTML = `
                     <div class="card-image-box">
                         ${imageHtml}
-                        <div class="avatar-placeholder" style="${imgUrl ? 'display:none;' : 'display:block;'}">${initial}</div>
+                        <div class="avatar-placeholder" style="${imgPath ? 'display:none;' : 'display:block;'}">${initial}</div>
                     </div>
                     <div class="card-content">
-                        <div class="video-title">${video.title}</div>
+                        <div class="video-title">${displayTitle}</div>
                         <div class="card-tags">
-                            <span class="badge badge-animator">@${video.animator}</span>
-                            ${video.characters.map(c => `<span class="badge badge-character">${c}</span>`).join('')}
-                            <span class="badge badge-universe">🌌 ${video.universe}</span>
+                            <span class="badge badge-animator">@${video.animador}</span>
+                            ${video.personajes.map(c => `<span class="badge badge-character">${c}</span>`).join('')}
+                            <span class="badge badge-universe">🌌 ${video.universo}</span>
                         </div>
                         <button class="action-button" onclick="secureRedirect('${video.url}')">Ver Video</button>
                     </div>
