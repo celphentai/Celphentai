@@ -118,5 +118,87 @@
     "universo": "genshin impact",
     "url": "https://playmogo.com/d/wt4odl4lcf90",
     "imagen": "chiori.jpg"
+  },
+  {
+    "id": "002001",
+    "animador": "anonds31",
+    "personajes": ["ellen joe"],
+    "universo": "zenless zone zero",
+    "url": "https://playmogo.com/d/ctfdncik2y4l",
+    "imagen": "ellen-joe.jpg"
+  },
+  {
+    "id": "003001",
+    "animador": "baronstrap",
+    "personajes": ["sinia"],
+    "universo": "original",
+    "url": "https://playmogo.com/d/vwvwddwu12fi",
+    "imagen": "sinia.jpg"
+  },
+  {
+    "id": "004001",
+    "animador": "gangaringens",
+    "personajes": ["kujikawa rise"],
+    "universo": "zenless zone zero",
+    "url": "https://playmogo.com/d/ipykocj4jy5p",
+    "imagen": "kujikawa-rise.jpg"
+  },
+  {
+    "id": "004002",
+    "animador": "gangaringens",
+    "personajes": ["chinatsu remiel"],
+    "universo": "zenless zone zero",
+    "url": "https://playmogo.com/d/jjbwcvghfmg2",
+    "imagen": "chinatsu-remiel.jpg"
+  },
+  {
+    "id": "004003",
+    "animador": "gangaringens",
+    "personajes": ["luciana de montefio"],
+    "universo": "zenless zone zero",
+    "url": "https://playmogo.com/d/4ho949eez328",
+    "imagen": "luciana-de-montefio.jpg"
+  },
+  {
+    "id": "004004",
+    "animador": "gangaringens",
+    "personajes": ["demenishki"],
+    "universo": "streamer",
+    "url": "https://playmogo.com/d/l85y8390o1w7",
+    "imagen": "demenishki.jpg"
+  },
+  {
+    "id": "005001",
+    "animador": "hexzy",
+    "personajes": ["yixuan"],
+    "universo": "zenless zone zero",
+    "url": "https://playmogo.com/d/172xgz6ku6hu",
+    "imagen": "yixuan.jpg"
+  },
+  {
+    "id": "005002",
+    "animador": "hexzy",
+    "personajes": ["alexandrina sebastiane"],
+    "universo": "zenless zone zero",
+    "url": "https://playmogo.com/d/ktgvbu607g3g",
+    "imagen": "alexandrina-sebastiane.jpg"
+  },
+  {
+    "id": "005003",
+    "animador": "hexzy",
+    "personajes": ["cantarella"],
+    "universo": "wuthering waves",
+    "url": "https://playmogo.com/d/61w7frixmzn0",
+    "imagen": "cantarella.jpg"
+  },
+  {
+    "id": "006001",
+    "animador": "nixour",
+    "personajes": ["shiori novella"],
+    "universo": "hololive",
+    "url": "https://playmogo.com/d/lufcgbakumvi",
+    "imagen": "shiori-novella.jpg"
   }
+
+
 ]
