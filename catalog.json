@@ -198,7 +198,14 @@
     "universo": "hololive",
     "url": "https://playmogo.com/d/lufcgbakumvi",
     "imagen": "shiori-novella.jpg"
-  }
-
+  },
+{
+    "id": "007001",
+    "animador": "kyoko3d",
+    "personajes": ["varesa"],
+    "universo": "genshin impact",
+    "url": "https://playmogo.com/d/4ln95tyw3qtr",
+    "imagen": "varesa.jpg"
+}
 
 ]
