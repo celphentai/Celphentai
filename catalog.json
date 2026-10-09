@@ -4,208 +4,592 @@
     "animador": "kekeanimations",
     "personajes": ["columbina"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/u8p171a19m8g",
-    "imagen": "columbina.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/u8p171a19m8g"
+    },
+    "imagen": "columbina.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001002",
     "animador": "kekeanimations",
     "personajes": ["mona 1"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/pmhfylf256aj",
-    "imagen": "mona.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/pmhfylf256aj"
+    },
+    "imagen": "mona.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001003",
     "animador": "kekeanimations",
     "personajes": ["mona 2"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/ldwyt8lg33cg",
-    "imagen": "mona.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/ldwyt8lg33cg"
+    },
+    "imagen": "mona.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001004",
     "animador": "kekeanimations",
     "personajes": ["nefer"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/jpbhu2i5cg66",
-    "imagen": "nefer.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/jpbhu2i5cg66"
+    },
+    "imagen": "nefer.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001005",
     "animador": "kekeanimations",
     "personajes": ["nilou"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/wxtmz4495g5u",
-    "imagen": "nilou.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/wxtmz4495g5u"
+    },
+    "imagen": "nilou.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001006",
     "animador": "kekeanimations",
     "personajes": ["furina"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/8nvuc4vmyx7i",
-    "imagen": "furina.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/8nvuc4vmyx7i"
+    },
+    "imagen": "furina.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001007",
     "animador": "kekeanimations",
     "personajes": ["mona 3"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/h8gzso4icp9n",
-    "imagen": "mona.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/h8gzso4icp9n"
+    },
+    "imagen": "mona.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001008",
     "animador": "kekeanimations",
     "personajes": ["alice", "nicole reeyn"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/q4nev9iw1oq4",
-    "imagen": "alice.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/q4nev9iw1oq4"
+    },
+    "imagen": "alice.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001009",
     "animador": "kekeanimations",
     "personajes": ["chevreuse"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/zuhkvtlbzhm3",
-    "imagen": "chevreuse.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/zuhkvtlbzhm3"
+    },
+    "imagen": "chevreuse.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001010",
     "animador": "kekeanimations",
     "personajes": ["lynette"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/cxssv94dx6qc",
-    "imagen": "lynette.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/cxssv94dx6qc"
+    },
+    "imagen": "lynette.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001011",
     "animador": "kekeanimations",
     "personajes": ["linnea"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/wvz4jttmmcux",
-    "imagen": "linnea.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/wvz4jttmmcux"
+    },
+    "imagen": "linnea.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001012",
     "animador": "kekeanimations",
     "personajes": ["chasca"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/axnksmhaj0tn",
-    "imagen": "chasca.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/axnksmhaj0tn"
+    },
+    "imagen": "chasca.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001013",
     "animador": "kekeanimations",
     "personajes": ["fischl"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/runj3m8ikimf",
-    "imagen": "fischl.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/runj3m8ikimf"
+    },
+    "imagen": "fischl.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001014",
     "animador": "kekeanimations",
     "personajes": ["citlali"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/k11r4cq254xn",
-    "imagen": "citlali.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/k11r4cq254xn"
+    },
+    "imagen": "citlali.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "001015",
     "animador": "kekeanimations",
     "personajes": ["chiori"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/wt4odl4lcf90",
-    "imagen": "chiori.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/wt4odl4lcf90"
+    },
+    "imagen": "chiori.jpg",
+    "fecha": "2026-07-01 23:24"
   },
   {
     "id": "002001",
     "animador": "anonds31",
     "personajes": ["ellen joe"],
     "universo": "zenless zone zero",
-    "url": "https://playmogo.com/d/ctfdncik2y4l",
-    "imagen": "ellen-joe.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/ctfdncik2y4l"
+    },
+    "imagen": "ellen-joe.jpg",
+    "fecha": "2026-06-24 01:23"
   },
   {
     "id": "003001",
     "animador": "baronstrap",
     "personajes": ["sinia"],
     "universo": "original",
-    "url": "https://playmogo.com/d/vwvwddwu12fi",
-    "imagen": "sinia.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/vwvwddwu12fi"
+    },
+    "imagen": "sinia.jpg",
+    "fecha": "2026-06-24 01:08"
   },
   {
     "id": "004001",
     "animador": "gangaringens",
     "personajes": ["kujikawa rise"],
     "universo": "persona",
-    "url": "https://playmogo.com/d/ipykocj4jy5p",
-    "imagen": "kujikawa-rise.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/ipykocj4jy5p"
+    },
+    "imagen": "kujikawa-rise.jpg",
+    "fecha": "2026-06-24 18:46"
   },
   {
     "id": "004002",
     "animador": "gangaringens",
     "personajes": ["chinatsu remiel"],
     "universo": "zenless zone zero",
-    "url": "https://playmogo.com/d/jjbwcvghfmg2",
-    "imagen": "chinatsu-remiel.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/jjbwcvghfmg2"
+    },
+    "imagen": "chinatsu-remiel.jpg",
+    "fecha": "2026-06-24 18:46"
   },
   {
     "id": "004003",
     "animador": "gangaringens",
     "personajes": ["luciana de montefio"],
     "universo": "zenless zone zero",
-    "url": "https://playmogo.com/d/4ho949eez328",
-    "imagen": "luciana-de-montefio.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/4ho949eez328"
+    },
+    "imagen": "luciana-de-montefio.jpg",
+    "fecha": "2026-06-24 18:46"
   },
   {
     "id": "004004",
     "animador": "gangaringens",
     "personajes": ["demenishki"],
     "universo": "streamer",
-    "url": "https://playmogo.com/d/l85y8390o1w7",
-    "imagen": "demenishki.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/l85y8390o1w7"
+    },
+    "imagen": "demenishki.jpg",
+    "fecha": "2026-06-24 18:46"
   },
   {
     "id": "005001",
     "animador": "hexzy",
     "personajes": ["yixuan"],
     "universo": "zenless zone zero",
-    "url": "https://playmogo.com/d/172xgz6ku6hu",
-    "imagen": "yixuan.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/172xgz6ku6hu"
+    },
+    "imagen": "yixuan.jpg",
+    "fecha": "2026-06-29 22:18"
   },
   {
     "id": "005002",
     "animador": "hexzy",
     "personajes": ["alexandrina sebastiane"],
     "universo": "zenless zone zero",
-    "url": "https://playmogo.com/d/ktgvbu607g3g",
-    "imagen": "alexandrina-sebastiane.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/ktgvbu607g3g"
+    },
+    "imagen": "alexandrina-sebastiane.jpg",
+    "fecha": "2026-06-29 22:18"
   },
   {
     "id": "005003",
     "animador": "hexzy",
     "personajes": ["cantarella"],
     "universo": "wuthering waves",
-    "url": "https://playmogo.com/d/61w7frixmzn0",
-    "imagen": "cantarella.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/61w7frixmzn0"
+    },
+    "imagen": "cantarella.jpg",
+    "fecha": "2026-06-25 22:18"
   },
   {
     "id": "006001",
     "animador": "nixour",
     "personajes": ["shiori novella"],
     "universo": "hololive",
-    "url": "https://playmogo.com/d/lufcgbakumvi",
-    "imagen": "shiori-novella.jpg"
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/lufcgbakumvi"
+    },
+    "imagen": "shiori-novella.jpg",
+    "fecha": "2026-06-25 22:06"
   },
-{
+  {
     "id": "007001",
     "animador": "kyoko3d",
     "personajes": ["varesa"],
     "universo": "genshin impact",
-    "url": "https://playmogo.com/d/4ln95tyw3qtr",
-    "imagen": "varesa.jpg"
-}
-
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/4ln95tyw3qtr"
+    },
+    "imagen": "varesa.jpg",
+    "fecha": "2026-09-16 16:21"
+  },
+  {
+    "id": "007002",
+    "animador": "kyoko3d",
+    "personajes": ["nicole demara"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/qy1j5hj1p4rt"
+    },
+    "imagen": "nicole-demara.jpg",
+    "fecha": "2026-09-17 16:21"
+  },
+  {
+    "id": "008001",
+    "animador": "rwt4184",
+    "personajes": ["mercy"],
+    "universo": "overwatch",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/ksgauw9kb0py"
+    },
+    "imagen": "mercy.jpg",
+    "fecha": "2026-06-25 22:10"
+  },
+  {
+    "id": "009001",
+    "animador": "saucifer3d",
+    "personajes": ["lucia elowen"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/cgiex4eocf6a"
+    },
+    "imagen": "lucia-elowen.jpg",
+    "fecha": "2026-06-26 20:36"
+  },
+  {
+    "id": "010001",
+    "animador": "sugardust",
+    "personajes": ["nicole demara"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/vvp1pz43rta1"
+    },
+    "imagen": "nicole-demara.jpg",
+    "fecha": "2026-06-26 21:33"
+  },
+  {
+    "id": "010002",
+    "animador": "sugardust",
+    "personajes": ["chisato nishikigi"],
+    "universo": "lycoris recoil",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/hsju9jw3oq9g"
+    },
+    "imagen": "chisato-nishikigi.jpg",
+    "fecha": "2026-06-26 21:33"
+  },
+  {
+    "id": "011001",
+    "animador": "twiistedlewds",
+    "personajes": ["zhu yuan"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/yyyti1s51nr3"
+    },
+    "imagen": "zhu-yuan.jpg",
+    "fecha": "2026-06-26 20:44"
+  },
+  {
+    "id": "011002",
+    "animador": "twiistedlewds",
+    "personajes": ["tsukishiro yanagi"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/nn9aahjvon50"
+    },
+    "imagen": "tsukishiro-yanagi.jpg",
+    "fecha": "2026-06-27 20:44"
+  },
+  {
+    "id": "011003",
+    "animador": "twiistedlewds",
+    "personajes": ["aria"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/k7gp2xzoqljo"
+    },
+    "imagen": "aria.jpg",
+    "fecha": "2026-06-27 20:44"
+  },
+  {
+    "id": "012001",
+    "animador": "redgectx",
+    "personajes": ["alice thymefield"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/9guj2a2kqx1e"
+    },
+    "imagen": "alice-thymefield.jpg",
+    "fecha": "2026-06-26 21:36"
+  },
+  {
+    "id": "013001",
+    "animador": "nodusfm",
+    "personajes": ["burnice white"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/0tvw2nz2nnu4"
+    },
+    "imagen": "burnice-white.jpg",
+    "fecha": "2026-06-26 21:38"
+  },
+  {
+    "id": "014001",
+    "animador": "sodeno19",
+    "personajes": ["xianyun 2"],
+    "universo": "genshin impact",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/mukccpzjnvlf"
+    },
+    "imagen": "xianyun.jpg",
+    "fecha": "2026-09-17 03:03"
+  },
+  {
+    "id": "014002",
+    "animador": "sodeno19",
+    "personajes": ["xianyun"],
+    "universo": "genshin impact",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/us815rdmoleu"
+    },
+    "imagen": "xianyun.jpg",
+    "fecha": "2026-09-17 03:03"
+  },
+  {
+    "id": "015001",
+    "animador": "suuru",
+    "personajes": ["tsukishiro yanagi"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/w37750ea6dln"
+    },
+    "imagen": "tsukishiro-yanagi.jpg",
+    "fecha": "2026-09-27 02:02"
+  },
+  {
+    "id": "016001",
+    "animador": "aidenhet",
+    "personajes": ["yvonne"],
+    "universo": "arknights",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/0paxrcpc1jeg",
+      "streamtape": "https://streamtape.com/v/G66jX2AOBYH1zOO/%5Baidenhet%5D_yvonne_%28arknights%29.mp4"
+    },
+    "imagen": "yvonne.jpg",
+    "fecha": "2026-10-09 01:28"
+  },
+  {
+    "id": "016002",
+    "animador": "aidenhet",
+    "personajes": ["yixuan"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/bbmk0uxmfbe6"
+    },
+    "imagen": "yixuan.jpg",
+    "fecha": "2026-09-27 02:34"
+  },
+  {
+    "id": "016003",
+    "animador": "aidenhet",
+    "personajes": ["ukinami yuzuha"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/k742rzwyzpaz",
+      "streamtape": "https://streamtape.com/v/wyQdaLRQZoTJO8r/%5Baidenhet%5D_ukinami_yuzuha_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "ukinami-yuzuha.jpg",
+    "fecha": "2026-10-09 01:42"
+  },
+  {
+    "id": "016004",
+    "animador": "aidenhet",
+    "personajes": ["remielle dan"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/c5sqbkdqr38l"
+    },
+    "imagen": "remielle-dan.jpg",
+    "fecha": "2026-09-27 02:28"
+  },
+  {
+    "id": "016005",
+    "animador": "aidenhet",
+    "personajes": ["promeia"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/qj0am5u2dfpi"
+    },
+    "imagen": "promeia.jpg",
+    "fecha": "2026-09-27 02:32"
+  },
+  {
+    "id": "016006",
+    "animador": "aidenhet",
+    "personajes": ["nicole demara"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/4v3mygtxjkrm",
+      "streamtape": "https://streamtape.com/v/dkzJ8363vMckvOv/%5Baidenhet%5D_nicole_demara_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "nicole-demara.jpg",
+    "fecha": "2026-10-09 14:53"
+  },
+  {
+    "id": "016007",
+    "animador": "aidenhet",
+    "personajes": ["kuki shinobu"],
+    "universo": "genshin impact",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/5xtummlelil3",
+      "streamtape": "https://streamtape.com/v/01Q7mBMjryibqra/%5Baidenhet%5D_kuki_shinobu_%28genshin_impact%29.mp4"
+    },
+    "imagen": "kuki-shinobu.jpg",
+    "fecha": "2026-10-08 19:36"
+  },
+  {
+    "id": "016008",
+    "animador": "aidenhet",
+    "personajes": ["kafka"],
+    "universo": "honkai star rail",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/hzuw3qkvj6vh",
+      "streamtape": "https://streamtape.com/v/b23WLb4G0piPbKk/%5Baidenhet%5D_kafka_%28honkai_star_rail%29.mp4"
+    },
+    "imagen": "kafka.jpg",
+    "fecha": "2026-10-08 19:34"
+  },
+  {
+    "id": "016009",
+    "animador": "aidenhet",
+    "personajes": ["evelyn chevalier"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/gtt45n76qezi"
+    },
+    "imagen": "evelyn-chevalier.jpg",
+    "fecha": "2026-09-27 02:36"
+  },
+  {
+    "id": "016010",
+    "animador": "aidenhet",
+    "personajes": ["caesar king", "belle"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/pbcdsiz7v924",
+      "streamtape": "https://streamtape.com/v/4Rx37k3BOzhdpM/%5Baidenhet%5D_caesar_king_and_belle_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "caesar-king.jpg",
+    "fecha": "2026-10-08 19:38"
+  },
+  {
+    "id": "016011",
+    "animador": "aidenhet",
+    "personajes": ["caesar king 2"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/crekrzxc381j",
+      "streamtape": "https://streamtape.com/v/K92GX8PYJJS0OZQ/%5Baidenhet%5D_caesar_king_2_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "caesar-king.jpg",
+    "fecha": "2026-10-08 19:42"
+  },
+  {
+    "id": "016012",
+    "animador": "aidenhet",
+    "personajes": ["caesar king"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/ik80h44w794g",
+      "streamtape": "https://streamtape.com/v/2733qDKWQLtZwLL/%5Baidenhet%5D_caesar_king_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "caesar-king.jpg",
+    "fecha": "2026-10-08 19:42"
+  },
+  {
+    "id": "016013",
+    "animador": "aidenhet",
+    "personajes": ["black swan"],
+    "universo": "honkai star rail",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/zuk0sbvj9194",
+      "streamtape": "https://streamtape.com/v/7pXDOPMqqkSArPY/%5Baidenhet%5D_black_swan_%28honkai_star_rail%29.mp4"
+    },
+    "imagen": "black-swan.jpg",
+    "fecha": "2026-10-08 19:42"
+  },
+  {
+    "id": "016014",
+    "animador": "aidenhet",
+    "personajes": ["astra yao"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/v8ldimcekk7e",
+      "streamtape": "https://streamtape.com/v/AQdOAQV69WtX8WR/%5Baidenhet%5D_astra_yao_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "astra-yao.jpg",
+    "fecha": "2026-10-08 19:42"
+  }
 ]
