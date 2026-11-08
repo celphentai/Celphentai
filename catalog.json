@@ -1927,5 +1927,102 @@
     },
     "imagen": "odette.jpg",
     "fecha": "2026-10-25 18:30"
+  },
+  {
+    "id": "031002",
+    "animador": "chengxuyuan",
+    "personajes": ["phoenix"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/2oqebcp9u5ms",
+      "streamtape": "https://streamtape.com/v/LOeGGOwZ3rf4jb/%5BChengxuyuan%5D_Phoenix_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "phoenix.jpg",
+    "fecha": "2026-10-25 19:00"
+  },
+  {
+    "id": "031003",
+    "animador": "chengxuyuan",
+    "personajes": ["hatsune miku"],
+    "universo": "vocaloid",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/7gjuo1zwmb5g",
+      "streamtape": "https://streamtape.com/v/g0zjrvPmAgIqb97/%5BChengxuyuan%5D_hatsune_miku_%28vocaloid%29.mp4"
+    },
+    "imagen": "hatsune-miku.jpg",
+    "fecha": "2026-10-25 19:30"
+  },
+  {
+    "id": "031004",
+    "animador": "chengxuyuan",
+    "personajes": ["iroi"],
+    "universo": "neverness to everness",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/qty8lnq37sp5",
+      "streamtape": "https://streamtape.com/v/2LpK1YDXgATZLlb/%5BChengxuyuan%5D_Iroi_%28Neverness_to_Everness%29.mp4"
+    },
+    "imagen": "iroi.jpg",
+    "fecha": "2026-10-25 20:00"
+  },
+  {
+    "id": "032001",
+    "animador": "sakamotono",
+    "personajes": ["ellen joe"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/b0vihiar8wbv",
+      "streamtape": "https://streamtape.com/v/dAXGovY1wqIkR73/%5BSakamotono%5D_ellen_joe_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "ellen-joe.jpg",
+    "fecha": "2026-10-25 20:30"
+  },
+  {
+    "id": "033001",
+    "animador": "akt",
+    "personajes": ["remielle dan"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/wh3ibmy0nd5a",
+      "streamtape": "https://streamtape.com/v/dLVDOb1vjAtkxlW/%5BAkt%5D_remielle_dan_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "remielle-dan.jpg",
+    "fecha": "2026-10-25 21:00"
+  },
+  {
+    "id": "034001",
+    "animador": "shaggy susu",
+    "personajes": ["ganyu"],
+    "universo": "genshin impact",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/uu0go5scvfvr",
+      "streamtape": "https://streamtape.com/v/dKxk210zMqfkwGQ/%5BShaggy_SUSU%5D_ganyu_%28genshin_impact%29.mp4"
+    },
+    "imagen": "ganyu.jpg",
+    "fecha": "2026-10-25 21:30"
+  },
+  {
+    "id": "035001",
+    "animador": "sutekimeppou",
+    "personajes": ["jane doe"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/ri60po700p0t",
+      "streamtape": "https://streamtape.com/v/a7ooporz84sxGmd/%5Bsutekimeppou%5D_jane_doe_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "jane-doe.jpg",
+    "fecha": "2026-10-25 22:00"
+  },
+  {
+    "id": "036001",
+    "animador": "wood cube",
+    "personajes": ["phoenix"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/t6gwu02llk5x",
+      "streamtape": "https://streamtape.com/v/LeV3ka9WGYTRQml/%5BWood_cube%5D_Phoenix_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "phoenix.jpg",
+    "fecha": "2026-10-25 22:30"
   }
 ]
+
