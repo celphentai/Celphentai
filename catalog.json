@@ -2023,6 +2023,271 @@
     },
     "imagen": "phoenix.jpg",
     "fecha": "2026-10-25 22:30"
+  },
+  {
+    "id": "037001",
+    "animador": "chinoa",
+    "personajes": ["aglaea"],
+    "universo": "honkai star rail",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/p8a7xxbwozq6",
+      "streamtape": "https://streamtape.com/v/w6oO3WLzVWCJ3RD/%5BChinoa%5D_aglaea_%28honkai_star_rail%29.mp4"
+    },
+    "imagen": "aglaea.jpg",
+    "fecha": "2026-11-08 16:00"
+  },
+  {
+    "id": "037002",
+    "animador": "chinoa",
+    "personajes": ["herta"],
+    "universo": "honkai star rail",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/x4r0ib23n4wq",
+      "streamtape": "https://streamtape.com/v/Gbbr8440vZF9Ay/%5BChinoa%5D_herta_%28honkai_star_rail%29.mp4"
+    },
+    "imagen": "herta.jpg",
+    "fecha": "2026-11-08 16:30"
+  },
+  {
+    "id": "037003",
+    "animador": "chinoa",
+    "personajes": ["sparkle"],
+    "universo": "honkai star rail",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/y1mze15rqgfl",
+      "streamtape": "https://streamtape.com/v/kwk9xvZp1wS8Jy/%5BChinoa%5D_sparkle_%28honkai_star_rail%29.mp4"
+    },
+    "imagen": "sparkle.jpg",
+    "fecha": "2026-11-08 17:00"
+  },
+  {
+    "id": "037004",
+    "animador": "chinoa",
+    "personajes": ["silver wolf"],
+    "universo": "honkai star rail",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/ydmsgl8ppdhr",
+      "streamtape": "https://streamtape.com/v/7bL1MgRGGRfxAq/%5BChinoa%5D_silver_wolf_%28honkai_star_rail%29.mp4"
+    },
+    "imagen": "silver-wolf.jpg",
+    "fecha": "2026-11-08 17:30"
+  },
+  {
+    "id": "037005",
+    "animador": "chinoa",
+    "personajes": ["yixuan"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/svgi61g72r8a",
+      "streamtape": "https://streamtape.com/v/eKO8dZoMm7iYrMJ/%5BChinoa%5D_yixuan_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "yixuan.jpg",
+    "fecha": "2026-11-08 18:00"
+  },
+  {
+    "id": "038001",
+    "animador": "akajin",
+    "personajes": ["ye shunguang"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/1thfpcwwcwx1",
+      "streamtape": "https://streamtape.com/v/xMKaVzRBJkckAqq/%5BAkajin%5D_ye_shunguang_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "ye-shunguang.jpg",
+    "fecha": "2026-11-08 18:30"
+  },
+  {
+    "id": "038002",
+    "animador": "akajin",
+    "personajes": ["serena"],
+    "universo": "pokemon",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/3m6j33aa7aez",
+      "streamtape": "https://streamtape.com/v/V79joDJPx8fKK0J/%5BAkajin%5D_serena_%28pokemon%29.mp4"
+    },
+    "imagen": "serena.jpg",
+    "fecha": "2026-11-08 19:00"
+  },
+  {
+    "id": "038003",
+    "animador": "akajin",
+    "personajes": ["jane doe"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/77k8c95kdc5u",
+      "streamtape": "https://streamtape.com/v/vPQXa2ajVdcPe9/%5BAkajin%5D_jane_doe_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "jane-doe.jpg",
+    "fecha": "2026-11-08 19:30"
+  },
+  {
+    "id": "038004",
+    "animador": "akajin",
+    "personajes": ["yixuan"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/d9ji6d4srfcz",
+      "streamtape": "https://streamtape.com/v/PylkoW2qLWh0z1G/%5BAkajin%5D_yixuan_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "yixuan.jpg",
+    "fecha": "2026-11-08 20:00"
+  },
+  {
+    "id": "038005",
+    "animador": "akajin",
+    "personajes": ["hoshimi miyabi"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/n1mk8ta975te",
+      "streamtape": "https://streamtape.com/v/xojmqaLaBXuwD0/%5BAkajin%5D_hoshimi_miyabi_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "hoshimi-miyabi.jpg",
+    "fecha": "2026-11-08 20:30"
+  },
+  {
+    "id": "038006",
+    "animador": "akajin",
+    "personajes": ["astra yao"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/j6cocc8w74l1",
+      "streamtape": "https://streamtape.com/v/koRpZ1p9V8UOL9x/%5BAkajin%5D_astra_yao_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "astra-yao.jpg",
+    "fecha": "2026-11-08 21:00"
+  },
+  {
+    "id": "038007",
+    "animador": "akajin",
+    "personajes": ["dobrynya"],
+    "universo": "fate grand order",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/xd64hus7bh9c",
+      "streamtape": "https://streamtape.com/v/RqDMRryRJmcjLG/%5BAkajin%5D_Dobrynya_%28fate_grand_order%29.mp4"
+    },
+    "imagen": "dobrynya.jpg",
+    "fecha": "2026-11-08 21:30"
+  },
+  {
+    "id": "038008",
+    "animador": "akajin",
+    "personajes": ["ellen joe"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/q60y2ueda9tl",
+      "streamtape": "https://streamtape.com/v/VXBORqYXMxhx73/%5BAkajin%5D_ellen_joe_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "ellen-joe.jpg",
+    "fecha": "2026-11-08 22:00"
+  },
+  {
+    "id": "038009",
+    "animador": "akajin",
+    "personajes": ["pyra"],
+    "universo": "xenoblade",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/dyfl1wxwox3s",
+      "streamtape": "https://streamtape.com/v/lwDlqA2KreHAoQ/%5BAkajin%5D_pyra_%28xenoblade%29.mp4"
+    },
+    "imagen": "pyra.jpg",
+    "fecha": "2026-11-08 22:30"
+  },
+  {
+    "id": "038010",
+    "animador": "akajin",
+    "personajes": ["pyra 2"],
+    "universo": "xenoblade",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/e3t78g7h0uph",
+      "streamtape": "https://streamtape.com/v/YGQGRzDpo6tv0YG/%5BAkajin%5D_pyra_2_%28xenoblade%29.mp4"
+    },
+    "imagen": "pyra.jpg",
+    "fecha": "2026-11-08 23:00"
+  },
+  {
+    "id": "038011",
+    "animador": "akajin",
+    "personajes": ["burnice white"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/fcmet7cot4nw",
+      "streamtape": "https://streamtape.com/v/8JP6lrmr2GCoagz/%5BAkajin%5D_burnice_white_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "burnice-white.jpg",
+    "fecha": "2026-11-08 23:30"
+  },
+  {
+    "id": "038012",
+    "animador": "akajin",
+    "personajes": ["nicole demara"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/rt5gvkvh19pk",
+      "streamtape": "https://streamtape.com/v/1OB8g9q0PqSe28w/%5BAkajin%5D_nicole_demara_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "nicole-demara.jpg",
+    "fecha": "2026-11-09 00:00"
+  },
+  {
+    "id": "038013",
+    "animador": "akajin",
+    "personajes": ["lyn"],
+    "universo": "fire emblem",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/qnqus1dnqbmy",
+      "streamtape": "https://streamtape.com/v/MYDjB4o1AmtGzQ/%5BAkajin%5D_lyn_%28fire_emblem%29.mp4"
+    },
+    "imagen": "lyn.jpg",
+    "fecha": "2026-11-09 00:30"
+  },
+  {
+    "id": "038014",
+    "animador": "akajin",
+    "personajes": ["rider"],
+    "universo": "fate grand order",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/ua7ql9ge998q",
+      "streamtape": "https://streamtape.com/v/6xmx438kOgT9jJz/%5BAkajin%5D_rider_%28fate_grand_order%29.mp4"
+    },
+    "imagen": "rider.jpg",
+    "fecha": "2026-11-09 01:00"
+  },
+  {
+    "id": "038015",
+    "animador": "akajin",
+    "personajes": ["mashu kyrielight"],
+    "universo": "fate grand order",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/cmf3rj1l4rff",
+      "streamtape": "https://streamtape.com/v/wz6lbgeq7lTo0r/%5BAkajin%5D_mashu_kyrielight_%28fate_grand_order%29.mp4"
+    },
+    "imagen": "mashu-kyrielight.jpg",
+    "fecha": "2026-11-09 01:30"
+  },
+  {
+    "id": "038016",
+    "animador": "akajin",
+    "personajes": ["zhu yuan"],
+    "universo": "zenless zone zero",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/ynto0278h8gz",
+      "streamtape": "https://streamtape.com/v/WXXkJdpBk7IbZ3W/%5BAkajin%5D_zhu_yuan_%28zenless_zone_zero%29.mp4"
+    },
+    "imagen": "zhu-yuan.jpg",
+    "fecha": "2026-11-09 02:00"
+  },
+  {
+    "id": "038017",
+    "animador": "akajin",
+    "personajes": ["hilda"],
+    "universo": "fire emblem",
+    "enlaces": {
+      "doodstream": "https://playmogo.com/d/n13xdcvriobp",
+      "streamtape": "https://streamtape.com/v/Y8KVPLZ0doCvYv9/%5BAkajin%5D_hilda_%28fire_emblem%29.mp4"
+    },
+    "imagen": "hilda.jpg",
+    "fecha": "2026-11-09 02:30"
   }
 ]
+
 
